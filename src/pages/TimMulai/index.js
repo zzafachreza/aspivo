@@ -20,6 +20,7 @@ import Share from 'react-native-share';
 export default function TimMulai({ navigation, route }) {
     const [data, setData] = useState([]);
 
+
     navigation.setOptions({
         title: 'PENILAIAN SET ' + route.params.set
     })
@@ -47,10 +48,242 @@ export default function TimMulai({ navigation, route }) {
 
 
 
-    const [pilih, setPilih] = useState(0);
+    const [pilih, setPilih] = useState({
+        0: {
+            'Service': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Receive': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Set': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Spike': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Block': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Dig': {
+                A: false,
+                R: false,
+                E: false
+            }
+        },
+        1: {
+            'Service': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Receive': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Set': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Spike': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Block': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Dig': {
+                A: false,
+                R: false,
+                E: false
+            }
+        },
+        2: {
+            'Service': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Receive': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Set': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Spike': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Block': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Dig': {
+                A: false,
+                R: false,
+                E: false
+            }
+        },
+        3: {
+            'Service': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Receive': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Set': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Spike': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Block': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Dig': {
+                A: false,
+                R: false,
+                E: false
+            }
+        },
+        4: {
+            'Service': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Receive': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Set': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Spike': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Block': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Dig': {
+                A: false,
+                R: false,
+                E: false
+            }
+        },
+        5: {
+            'Service': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Receive': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Set': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Spike': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Block': {
+                A: false,
+                R: false,
+                E: false
+            },
+            'Dig': {
+                A: false,
+                R: false,
+                E: false
+            }
+        },
+    });
 
 
 
+    const sendServer = (x, y, z, i) => {
+
+        console.log('index', i)
+
+        {
+            const dd = {
+                fid_tim: route.params.id,
+                set: route.params.set,
+                fid_pemain: z,
+                jenis: x,
+                tipe: y,
+                nilai: 1,
+            }
+
+            showMessage({
+                backgroundColor: y == 'A' ? colors.success : y == 'R' ? colors.secondary : colors.danger,
+                color: colors.black,
+                message: x + ' Nilai  ' + y
+            })
+
+            // let tmp = pilih;
+            // let jenis = x;
+            // console.log('terpilih', tmp[i][x][y])
+
+            // tmp[i][x][y] = true;
+
+            // setTimeout(() => {
+            //     console.warn(tmp);
+            // }, 200)
+
+            // // console.warn(pilih);
+            // setPilih(tmp);
+
+
+            // axios.post(apiURL + 'add.php', dd).then(res => {
+            //     console.log(res.data);
+            // })
+        }
+    }
 
 
 
@@ -84,7 +317,7 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
                         }}>Nama Pemain</Text>
                     </View>
@@ -94,7 +327,7 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
                         }}>Service</Text>
                     </View>
@@ -104,7 +337,7 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
                         }}>Receive</Text>
                     </View>
@@ -114,7 +347,7 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
                         }}>Set</Text>
                     </View>
@@ -124,7 +357,7 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
                         }}>Spike</Text>
                     </View>
@@ -134,9 +367,9 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
-                        }}>Blok</Text>
+                        }}>Block</Text>
                     </View>
                     <View style={{
                         flex: 1,
@@ -144,15 +377,15 @@ export default function TimMulai({ navigation, route }) {
                         <Text style={{
                             textAlign: 'center',
                             fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 30,
+                            fontSize: windowWidth / 35,
                             color: colors.primary,
                         }}>Dig</Text>
                     </View>
                 </View>
-                {data.map(item => {
+                {data.map((item, index) => {
                     return (
                         <View style={{
-                            padding: 7,
+                            padding: 1,
                             flexDirection: 'row',
                             backgroundColor: item.posisi % 2 == 1 ? colors.white : colors.zavalabs
                             // borderWidth: 2,
@@ -163,7 +396,7 @@ export default function TimMulai({ navigation, route }) {
                             }}>
                                 <Text style={{
                                     fontFamily: fonts.secondary[600],
-                                    fontSize: windowWidth / 30,
+                                    fontSize: windowWidth / 35,
                                     color: colors.primary,
                                 }}>{item.posisi}. </Text>
 
@@ -171,7 +404,7 @@ export default function TimMulai({ navigation, route }) {
                                     // flex: 1,
 
                                     fontFamily: fonts.secondary[600],
-                                    fontSize: windowWidth / 30,
+                                    fontSize: windowWidth / 35,
                                     color: colors.primary,
                                 }}>{item.nama_pemain}
                                 </Text>
@@ -186,22 +419,23 @@ export default function TimMulai({ navigation, route }) {
                                 flexDirection: 'row',
                                 justifyContent: 'space-around'
                             }}>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Service', 'A', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     borderWidth: 1,
+
                                 }}>
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>A</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Service', 'R', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -212,11 +446,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>R</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Service', 'E', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -227,7 +461,7 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>E</Text>
                                 </TouchableOpacity>
@@ -241,7 +475,7 @@ export default function TimMulai({ navigation, route }) {
                                 flexDirection: 'row',
                                 justifyContent: 'space-around'
                             }}>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Receive', 'A', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -252,11 +486,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>A</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Receive', 'R', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -267,11 +501,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>R</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Receive', 'E', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -282,7 +516,7 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>E</Text>
                                 </TouchableOpacity>
@@ -295,7 +529,7 @@ export default function TimMulai({ navigation, route }) {
                                 flexDirection: 'row',
                                 justifyContent: 'space-around'
                             }}>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Set', 'A', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -306,11 +540,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>A</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Set', 'R', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -321,11 +555,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>R</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Set', 'E', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -336,7 +570,7 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>E</Text>
                                 </TouchableOpacity>
@@ -349,7 +583,7 @@ export default function TimMulai({ navigation, route }) {
                                 flexDirection: 'row',
                                 justifyContent: 'space-around'
                             }}>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Spike', 'A', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -360,11 +594,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>A</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Spike', 'R', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -375,11 +609,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>R</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Spike', 'E', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -390,12 +624,12 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>E</Text>
                                 </TouchableOpacity>
                             </View>
-                            {/* blok */}
+                            {/* Block */}
                             <View style={{
                                 borderLeftWidth: 1,
                                 borderLeftColor: colors.black,
@@ -403,7 +637,7 @@ export default function TimMulai({ navigation, route }) {
                                 flexDirection: 'row',
                                 justifyContent: 'space-around'
                             }}>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Block', 'A', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -414,11 +648,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>A</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Block', 'R', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -429,11 +663,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>R</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Block', 'E', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -444,7 +678,7 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>E</Text>
                                 </TouchableOpacity>
@@ -457,7 +691,7 @@ export default function TimMulai({ navigation, route }) {
                                 flexDirection: 'row',
                                 justifyContent: 'space-around'
                             }}>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Dig', 'A', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -468,11 +702,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>A</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Dig', 'R', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -483,11 +717,11 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>R</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{
+                                <TouchableOpacity onPress={() => sendServer('Dig', 'E', item.id, index)} style={{
                                     height: 30,
                                     width: 30,
                                     borderRadius: 15,
@@ -498,7 +732,7 @@ export default function TimMulai({ navigation, route }) {
                                     <Text style={{
                                         textAlign: 'center',
                                         fontFamily: fonts.secondary[600],
-                                        fontSize: windowWidth / 30,
+                                        fontSize: windowWidth / 35,
                                         color: colors.primary,
                                     }}>E</Text>
                                 </TouchableOpacity>
@@ -509,10 +743,10 @@ export default function TimMulai({ navigation, route }) {
 
             </View>
 
-            <MyButton onPress={() => navigation.navigate('TimMulai', {
+            <MyButton onPress={() => navigation.navigate('TimHasil', {
                 id: route.params.id,
                 set: route.params.set
-            })} title="Simpan" />
+            })} title="Lihat Hasil" />
 
 
         </SafeAreaView>

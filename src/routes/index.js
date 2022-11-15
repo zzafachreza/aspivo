@@ -21,6 +21,7 @@ import {
   TimSet,
   TimSetDetail,
   TimMulai,
+  TimHasil,
 } from '../pages';
 import { colors } from '../utils';
 
@@ -257,6 +258,19 @@ export default function Router() {
         component={TimMulai}
         options={({ route }) => ({
           title: route.params.name,
+          headerStyle: {
+            backgroundColor: colors.secondary,
+          },
+          headerTintColor: colors.primary,
+        })}
+      />
+
+      <Stack.Screen
+        name="TimHasil"
+        component={TimHasil}
+        options={({ route }) => ({
+          title: route.params.name,
+          headerShown: false,
           headerStyle: {
             backgroundColor: colors.secondary,
           },

@@ -17,6 +17,7 @@ import TimAddPemain from './TimAddPemain';
 import TimSet from './TimSet';
 import TimSetDetail from './TimSetDetail';
 import TimMulai from './TimMulai';
+import TimHasil from './TimHasil';
 
 
 
@@ -51,5 +52,6 @@ export {
   TimAddPemain,
   TimSet,
   TimSetDetail,
-  TimMulai
+  TimMulai,
+  TimHasil
 };

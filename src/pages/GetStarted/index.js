@@ -39,7 +39,7 @@ export default function GetStarted({ navigation }) {
                     marginBottom: 20,
                 }}>PILIH TIM</Text>
 
-                <MyButton onPress={() => navigation.navigate('TimAdd')} warna={colors.secondary} title="baru" />
+                <MyButton onPress={() => navigation.navigate('TimAdd')} warna={colors.secondary} title="Baru" />
                 <MyGap jarak={20} />
                 <MyButton onPress={() => navigation.navigate('TimList')} warna={colors.secondary} title="Cari" />
             </View>
