@@ -55,7 +55,7 @@ export default function TimAddPemain({ navigation, route }) {
                 })} placeholder="masukan posisi pemain" />
                 <MyGap jarak={20} />
 
-                {!loading && <MyButton onPress={_sendServer} title="Buat Tim baru" />}
+                {!loading && <MyButton onPress={_sendServer} title="Tambah Pemain" />}
                 {loading && <ActivityIndicator color={colors.secondary} size="large" />}
             </ScrollView>
         </SafeAreaView>

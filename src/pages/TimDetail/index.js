@@ -103,26 +103,43 @@ export default function TimDetail({ navigation, route }) {
             backgroundColor: colors.primary,
             padding: 10,
         }}>
+
             <View style={{
                 flex: 1
             }}>
+
                 <Text style={{
                     textAlign: 'center',
                     fontFamily: fonts.secondary[600],
                     color: colors.white,
                     fontSize: windowWidth / 20
                 }}>{route.params.nama_tim}</Text>
+
+
                 <FlatList data={data} renderItem={__renderItem} />
             </View>
 
 
-            {data.length < 6 && <MyButton onPress={() => navigation.navigate('TimAddPemain', {
-                fid_tim: route.params.id
-            })} title="Tambah Pemain" />}
-
-            {data.length > 5 && <MyButton onPress={() => navigation.navigate('TimSet', {
-                id: route.params.id
-            })} title="Pilih SET" />}
+            <View style={{
+                flexDirection: 'row'
+            }}>
+                <View style={{
+                    flex: 1,
+                    padding: 3,
+                }}>
+                    <MyButton warna={colors.white} onPress={() => navigation.navigate('TimAddPemain', {
+                        fid_tim: route.params.id
+                    })} title="Tambah Pemain" />
+                </View>
+                <View style={{
+                    flex: 1,
+                    padding: 3,
+                }}>
+                    <MyButton onPress={() => navigation.navigate('TimSet', {
+                        id: route.params.id
+                    })} title="Pilih SET" />
+                </View>
+            </View>
 
         </SafeAreaView>
     )

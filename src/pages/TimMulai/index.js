@@ -38,7 +38,7 @@ export default function TimMulai({ navigation, route }) {
 
 
     const __getTransaction = (x) => {
-        axios.post(apiURL + 'tim_data_pemain.php', {
+        axios.post(apiURL + 'tim_data_pemain_mulai.php', {
             fid_tim: x
         }).then(rz => {
             setData(rz.data);
@@ -279,9 +279,9 @@ export default function TimMulai({ navigation, route }) {
             // setPilih(tmp);
 
 
-            // axios.post(apiURL + 'add.php', dd).then(res => {
-            //     console.log(res.data);
-            // })
+            axios.post(apiURL + 'add.php', dd).then(res => {
+                console.log(res.data);
+            })
         }
     }
 

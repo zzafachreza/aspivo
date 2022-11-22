@@ -51,7 +51,7 @@ export default function TimList({ navigation }) {
 
     const __renderItem = ({ item }) => {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate('TimDetail', item)} style={{
+            <View style={{
                 padding: 10,
                 marginVertical: 5,
                 flex: 1,
@@ -64,8 +64,53 @@ export default function TimList({ navigation }) {
                     fontSize: windowWidth / 25,
                     color: colors.primary,
                 }}>{item.nama_tim}</Text>
-                <Icon type='ionicon' size={windowWidth / 15} name='chevron-forward-circle-outline' color={colors.primary} />
-            </TouchableOpacity>
+
+                <View style={{
+                    flexDirection: 'row'
+                }}>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('TimDetail', item)} style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        marginRight: 10,
+                        backgroundColor: colors.primary,
+                        padding: 10,
+                        borderRadius: 5,
+                    }}>
+                        <Text style={{
+                            color: colors.white,
+                            fontFamily: fonts.secondary[600],
+                            fontSize: windowWidth / 28,
+                        }}>Detail</Text>
+
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        Alert.alert('Aspivo', 'Apakah kamu yakin akan hapus tim ' + item.nama_tim + '?', [
+                            {
+                                text: 'Batal',
+                                type: 'cancel'
+                            },
+                            {
+                                text: 'Hapus',
+                                type: 'default',
+                                onPress: () => {
+                                    axios.post(apiURL + 'tim_delete.php', {
+                                        id_tim: item.id
+                                    }).then(res => {
+                                        __getTransaction();
+                                        showMessage({
+                                            type: 'success',
+                                            message: 'Tim ' + item.nama_tim + ' berhasil dihapus !'
+                                        })
+                                    })
+                                }
+                            }
+                        ])
+                    }}>
+                        <Icon type='ionicon' size={windowWidth / 15} name='trash-outline' color={colors.danger} />
+                    </TouchableOpacity>
+                </View>
+            </View>
         )
     }
 

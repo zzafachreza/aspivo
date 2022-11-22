@@ -134,56 +134,6 @@ export default function TimSetDetail({ navigation, route }) {
                     axios.post(apiURL + 'tim_update.php', {
                         fid_tim: route.params.id,
                         id_pemain: pilih,
-                        posisi: 6
-                    }).then(res => {
-
-                        __getTransaction(route.params.id)
-                    })
-                }} style={{
-                    width: windowWidth / 4.5,
-                    backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
-                    borderRadius: (windowWidth / 4.5) / 2,
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
-                    <Text style={{
-                        textAlign: 'center',
-                        fontFamily: fonts.secondary[600],
-                        color: colors.primary,
-                        fontSize: windowWidth / 10
-                    }}>6</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => {
-                    axios.post(apiURL + 'tim_update.php', {
-                        fid_tim: route.params.id,
-                        id_pemain: pilih,
-                        posisi: 5
-                    }).then(res => {
-
-                        __getTransaction(route.params.id)
-                    })
-                }} style={{
-                    width: windowWidth / 4.5,
-                    backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
-                    borderRadius: (windowWidth / 4.5) / 2,
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
-                    <Text style={{
-                        textAlign: 'center',
-                        fontFamily: fonts.secondary[600],
-                        color: colors.primary,
-                        fontSize: windowWidth / 10
-                    }}>5</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => {
-                    axios.post(apiURL + 'tim_update.php', {
-                        fid_tim: route.params.id,
-                        id_pemain: pilih,
                         posisi: 4
                     }).then(res => {
 
@@ -204,13 +154,6 @@ export default function TimSetDetail({ navigation, route }) {
                         fontSize: windowWidth / 10
                     }}>4</Text>
                 </TouchableOpacity>
-
-            </View>
-            <View style={{
-                flex: 0.3,
-                flexDirection: 'row',
-                justifyContent: 'space-around'
-            }}>
 
                 <TouchableOpacity onPress={() => {
                     axios.post(apiURL + 'tim_update.php', {
@@ -260,6 +203,63 @@ export default function TimSetDetail({ navigation, route }) {
                         color: colors.primary,
                         fontSize: windowWidth / 10
                     }}>2</Text>
+                </TouchableOpacity>
+
+            </View>
+            <View style={{
+                flex: 0.3,
+                flexDirection: 'row',
+                justifyContent: 'space-around'
+            }}>
+
+                <TouchableOpacity onPress={() => {
+                    axios.post(apiURL + 'tim_update.php', {
+                        fid_tim: route.params.id,
+                        id_pemain: pilih,
+                        posisi: 5
+                    }).then(res => {
+
+                        __getTransaction(route.params.id)
+                    })
+                }} style={{
+                    width: windowWidth / 4.5,
+                    backgroundColor: colors.secondary,
+                    height: windowWidth / 4.5,
+                    borderRadius: (windowWidth / 4.5) / 2,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        textAlign: 'center',
+                        fontFamily: fonts.secondary[600],
+                        color: colors.primary,
+                        fontSize: windowWidth / 10
+                    }}>5</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {
+                    axios.post(apiURL + 'tim_update.php', {
+                        fid_tim: route.params.id,
+                        id_pemain: pilih,
+                        posisi: 6
+                    }).then(res => {
+
+                        __getTransaction(route.params.id)
+                    })
+                }} style={{
+                    width: windowWidth / 4.5,
+                    backgroundColor: colors.secondary,
+                    height: windowWidth / 4.5,
+                    borderRadius: (windowWidth / 4.5) / 2,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        textAlign: 'center',
+                        fontFamily: fonts.secondary[600],
+                        color: colors.primary,
+                        fontSize: windowWidth / 10
+                    }}>6</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => {
