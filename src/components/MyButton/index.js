@@ -10,7 +10,7 @@ export default function MyButton({
   onPress,
   Icons,
   radius = 10,
-  colorText = 'white',
+  colorText = colors.primary,
   fontWeight = 'normal',
   iconColor = 'white',
   borderSize = 0,
@@ -23,7 +23,7 @@ export default function MyButton({
       {/* <Icon type="ionicon" name={Icons} color={iconColor} size={windowWidth / 35} /> */}
       <Text
         style={{
-          color: colors.primary,
+          color: colorText,
           fontSize: windowWidth / 35,
           left: 5,
           fontSize: windowWidth / 28,

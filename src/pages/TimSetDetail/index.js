@@ -127,7 +127,7 @@ export default function TimSetDetail({ navigation, route }) {
             <View style={{
                 flex: 0.3,
                 flexDirection: 'row',
-                justifyContent: 'space-around'
+                justifyContent: 'space-evenly'
             }}>
 
                 <TouchableOpacity onPress={() => {
@@ -140,9 +140,9 @@ export default function TimSetDetail({ navigation, route }) {
                         __getTransaction(route.params.id)
                     })
                 }} style={{
-                    width: windowWidth / 4.5,
+                    width: windowWidth / 6,
                     backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
+                    height: windowWidth / 6,
                     borderRadius: (windowWidth / 4.5) / 2,
                     justifyContent: 'center',
                     alignItems: 'center'
@@ -165,9 +165,9 @@ export default function TimSetDetail({ navigation, route }) {
                         __getTransaction(route.params.id)
                     })
                 }} style={{
-                    width: windowWidth / 4.5,
+                    width: windowWidth / 6,
                     backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
+                    height: windowWidth / 6,
                     borderRadius: (windowWidth / 4.5) / 2,
                     justifyContent: 'center',
                     alignItems: 'center'
@@ -190,9 +190,9 @@ export default function TimSetDetail({ navigation, route }) {
                         __getTransaction(route.params.id)
                     })
                 }} style={{
-                    width: windowWidth / 4.5,
+                    width: windowWidth / 6,
                     backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
+                    height: windowWidth / 6,
                     borderRadius: (windowWidth / 4.5) / 2,
                     justifyContent: 'center',
                     alignItems: 'center'
@@ -205,6 +205,38 @@ export default function TimSetDetail({ navigation, route }) {
                     }}>2</Text>
                 </TouchableOpacity>
 
+
+
+            </View>
+            <View style={{
+                flex: 0.3,
+                flexDirection: 'row',
+                justifyContent: 'flex-end'
+            }}>
+                <TouchableOpacity onPress={() => {
+                    axios.post(apiURL + 'tim_update.php', {
+                        fid_tim: route.params.id,
+                        id_pemain: pilih,
+                        posisi: 'L'
+                    }).then(res => {
+
+                        __getTransaction(route.params.id)
+                    })
+                }} style={{
+                    width: windowWidth / 6,
+                    backgroundColor: colors.secondary,
+                    height: windowWidth / 6,
+                    borderRadius: (windowWidth / 4.5) / 2,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        textAlign: 'center',
+                        fontFamily: fonts.secondary[600],
+                        color: colors.primary,
+                        fontSize: windowWidth / 10
+                    }}>L</Text>
+                </TouchableOpacity>
             </View>
             <View style={{
                 flex: 0.3,
@@ -222,9 +254,9 @@ export default function TimSetDetail({ navigation, route }) {
                         __getTransaction(route.params.id)
                     })
                 }} style={{
-                    width: windowWidth / 4.5,
+                    width: windowWidth / 6,
                     backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
+                    height: windowWidth / 6,
                     borderRadius: (windowWidth / 4.5) / 2,
                     justifyContent: 'center',
                     alignItems: 'center'
@@ -247,9 +279,9 @@ export default function TimSetDetail({ navigation, route }) {
                         __getTransaction(route.params.id)
                     })
                 }} style={{
-                    width: windowWidth / 4.5,
+                    width: windowWidth / 6,
                     backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
+                    height: windowWidth / 6,
                     borderRadius: (windowWidth / 4.5) / 2,
                     justifyContent: 'center',
                     alignItems: 'center'
@@ -272,9 +304,9 @@ export default function TimSetDetail({ navigation, route }) {
                         __getTransaction(route.params.id)
                     })
                 }} style={{
-                    width: windowWidth / 4.5,
+                    width: windowWidth / 6,
                     backgroundColor: colors.secondary,
-                    height: windowWidth / 4.5,
+                    height: windowWidth / 6,
                     borderRadius: (windowWidth / 4.5) / 2,
                     justifyContent: 'center',
                     alignItems: 'center'

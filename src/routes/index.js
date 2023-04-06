@@ -22,6 +22,7 @@ import {
   TimSetDetail,
   TimMulai,
   TimHasil,
+  Petunjuk,
 } from '../pages';
 import { colors } from '../utils';
 
@@ -51,6 +52,21 @@ export default function Router() {
           headerTintColor: '#fff',
         }}
       />
+
+      <Stack.Screen
+        name="Petunjuk"
+        component={Petunjuk}
+        options={{
+          headerShown: true,
+          headerTitle: 'Petunjuk Penggunaan',
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+
+
       <Stack.Screen
         name="SAdd"
         component={SAdd}

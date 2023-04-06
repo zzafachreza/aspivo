@@ -1,7 +1,7 @@
 import { ActivityIndicator, Alert, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../../utils'
-import { MyButton, MyGap, MyInput } from '../../components'
+import { MyButton, MyGap, MyInput, MyPicker } from '../../components'
 import axios from 'axios';
 import { apiURL } from '../../utils/localStorage';
 
@@ -49,10 +49,18 @@ export default function TimAddPemain({ navigation, route }) {
                     nomor: x
                 })} placeholder="masukan nomor pemain" />
                 <MyGap jarak={10} />
-                <MyInput label="Posisi Pemain" value={kirim.posisi} onChangeText={x => setKirim({
+
+
+                <MyPicker label="Posisi Pemain" data={[
+                    { label: 'Outside Hitter (OH)', value: 'OH' },
+                    { label: 'Middle Blocker (MB)', value: 'MB' },
+                    { label: 'Opposite Hitter (OP)', value: 'OP' },
+                    { label: ' Setter (S)', value: 'S' },
+                    { label: 'Libero (L)', value: 'L' },
+                ]} onValueChange={x => setKirim({
                     ...kirim,
                     posisi: x
-                })} placeholder="masukan posisi pemain" />
+                })} />
                 <MyGap jarak={20} />
 
                 {!loading && <MyButton onPress={_sendServer} title="Tambah Pemain" />}

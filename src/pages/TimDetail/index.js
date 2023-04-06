@@ -115,8 +115,131 @@ export default function TimDetail({ navigation, route }) {
                     fontSize: windowWidth / 20
                 }}>{route.params.nama_tim}</Text>
 
+                <View style={{
+                    flexDirection: 'row',
+                    backgroundColor: colors.white,
 
-                <FlatList data={data} renderItem={__renderItem} />
+                }}>
+                    <View style={{
+                        flex: 0.2,
+                        padding: 5,
+                        margin: 1,
+                        backgroundColor: colors.primary
+                    }}>
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.white,
+                            fontSize: 14
+                        }}>No</Text>
+                    </View>
+                    <View style={{
+                        flex: 1,
+                        padding: 5,
+                        margin: 1,
+                        backgroundColor: colors.primary
+                    }}>
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.white,
+                            fontSize: 14,
+                            textAlign: 'center',
+                        }}>Nama</Text>
+                    </View>
+                    <View style={{
+                        flex: 0.5,
+                        margin: 1,
+                        padding: 5,
+                        backgroundColor: colors.primary
+                    }}>
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.white,
+                            fontSize: 14,
+                            textAlign: 'center',
+                        }}>Posisi</Text>
+                    </View>
+                    <View style={{
+                        flex: 0.5,
+                        padding: 5,
+                        margin: 1,
+                        backgroundColor: colors.primary
+                    }}>
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.white,
+                            textAlign: 'center',
+                            fontSize: 14
+                        }}>Action</Text>
+                    </View>
+                </View>
+
+
+                {/* <FlatList data={data} renderItem={__renderItem} /> */}
+
+                {data.map(item => {
+                    return (
+                        <View style={{
+                            flexDirection: 'row',
+                            backgroundColor: colors.white,
+                        }}>
+                            <View style={{
+                                flex: 0.2,
+                                padding: 5,
+                                margin: 1,
+                                backgroundColor: colors.primary
+                            }}>
+                                <Text style={{
+                                    fontFamily: fonts.secondary[600],
+                                    color: colors.white,
+                                    fontSize: 14
+                                }}>{item.nomor}</Text>
+                            </View>
+                            <View style={{
+                                flex: 1,
+                                padding: 5,
+                                margin: 1,
+                                backgroundColor: colors.primary
+                            }}>
+                                <Text style={{
+                                    fontFamily: fonts.secondary[600],
+                                    color: colors.white,
+                                    fontSize: 14,
+                                    textAlign: 'center',
+                                }}>{item.nama_pemain}</Text>
+                            </View>
+                            <View style={{
+                                flex: 0.5,
+                                margin: 1,
+                                padding: 5,
+                                backgroundColor: colors.primary
+                            }}>
+                                <Text style={{
+                                    fontFamily: fonts.secondary[600],
+                                    color: colors.white,
+                                    fontSize: 14,
+                                    textAlign: 'center',
+                                }}>{item.posisi}</Text>
+                            </View>
+                            <View style={{
+                                flex: 0.5,
+                                padding: 5,
+                                margin: 1,
+                                backgroundColor: colors.primary
+                            }}>
+                                <TouchableOpacity onPress={() => {
+                                    axios.post(apiURL + 'tim_delete_pemain.php', {
+                                        id_pemain: item.id
+                                    }).then(rs => {
+                                        console.log(rs.data);
+                                        __getTransaction(route.params.id)
+                                    })
+                                }}>
+                                    <Icon type='ionicon' size={14} name='trash' color={colors.white} />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    )
+                })}
             </View>
 
 

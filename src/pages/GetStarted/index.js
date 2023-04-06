@@ -5,6 +5,7 @@ import {
     View,
     ActivityIndicator,
     Image,
+    TouchableOpacity,
     Animated,
 } from 'react-native';
 import { MyButton, MyGap } from '../../components';
@@ -23,6 +24,18 @@ export default function GetStarted({ navigation }) {
                 flex: 1,
                 backgroundColor: colors.primary,
             }}>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Petunjuk')} activeOpacity={1} style={{
+                padding: 20,
+                backgroundColor: colors.secondary,
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+            }}>
+                <Text style={{
+                    fontFamily: fonts.secondary[600],
+                    color: colors.primary,
+                }}>Petunjuk Penggunaan >> </Text>
+            </TouchableOpacity>
             <View style={{
                 flex: 1,
                 justifyContent: 'center',

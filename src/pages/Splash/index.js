@@ -80,6 +80,17 @@ export default function Splash({ navigation }) {
       }}>
         <MyButton onPress={() => navigation.navigate('GetStarted')} warna={colors.secondary} title="Mulai" />
       </View>
+      <View style={{
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <Text style={{
+          fontSize: windowWidth / 30,
+          color: colors.white,
+          fontFamily: fonts.secondary[400]
+        }}>Dikembangkan oleh Galih Pratama</Text>
+      </View>
     </View>
   );
 }

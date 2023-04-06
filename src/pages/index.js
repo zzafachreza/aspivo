@@ -18,6 +18,7 @@ import TimSet from './TimSet';
 import TimSetDetail from './TimSetDetail';
 import TimMulai from './TimMulai';
 import TimHasil from './TimHasil';
+import Petunjuk from './Petunjuk';
 
 
 
@@ -36,6 +37,7 @@ import TimHasil from './TimHasil';
 export {
   Splash,
   Home,
+  Petunjuk,
   SHutang,
   SCek,
   SPenyakit,

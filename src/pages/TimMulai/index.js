@@ -243,6 +243,7 @@ export default function TimMulai({ navigation, route }) {
         },
     });
 
+    const [tmp, setTmp] = useState({});
 
 
     const sendServer = (x, y, z, i) => {
@@ -258,6 +259,8 @@ export default function TimMulai({ navigation, route }) {
                 tipe: y,
                 nilai: 1,
             }
+
+            setTmp(dd);
 
             showMessage({
                 backgroundColor: y == 'A' ? colors.success : y == 'R' ? colors.secondary : colors.danger,
@@ -743,10 +746,36 @@ export default function TimMulai({ navigation, route }) {
 
             </View>
 
-            <MyButton onPress={() => navigation.navigate('TimHasil', {
-                id: route.params.id,
-                set: route.params.set
-            })} title="Lihat Hasil" />
+            <View style={{
+                flexDirection: 'row'
+            }}>
+                <View style={{
+                    flex: 1,
+                    padding: 5,
+                }}>
+                    <MyButton warna={colors.primary} onPress={() => {
+                        console.log(tmp);
+                        // axios.post(apiURL + 'delete_history.php', tmp).then(res => {
+                        //     console.log(res.data)
+                        // })
+                    }} title="Undo / Batal" colorText={colors.secondary} />
+                </View>
+                <View style={{
+                    flex: 1,
+                    padding: 5,
+                }}>
+                    <MyButton onPress={() => navigation.navigate('TimHasil', {
+                        id: route.params.id,
+                        set: route.params.set
+                    })} title="Lihat Hasil" />
+                </View>
+                <View style={{
+                    flex: 1,
+                    padding: 5,
+                }}>
+                    <MyButton colorText={colors.danger} onPress={() => navigation.goBack()} title="Ganti Pemain" />
+                </View>
+            </View>
 
 
         </SafeAreaView>
