@@ -755,9 +755,20 @@ export default function TimMulai({ navigation, route }) {
                 }}>
                     <MyButton warna={colors.primary} onPress={() => {
                         console.log(tmp);
-                        // axios.post(apiURL + 'delete_history.php', tmp).then(res => {
-                        //     console.log(res.data)
-                        // })
+                        axios.post(apiURL + 'delete_history.php', tmp).then(res => {
+                            console.log(res.data);
+                            if (res.data == 200) {
+                                showMessage({
+                                    type: 'success',
+                                    message: 'Undo Berhasil !'
+                                })
+                            } else if (res.data == 404) {
+                                showMessage({
+                                    type: 'danger',
+                                    message: 'Kamu belum melakukan penilaian'
+                                })
+                            }
+                        })
                     }} title="Undo / Batal" colorText={colors.secondary} />
                 </View>
                 <View style={{

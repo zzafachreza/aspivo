@@ -82,6 +82,13 @@ export default function TimSetDetail({ navigation, route }) {
                     }}>{item.nama_pemain}
                     </Text>
                     <Text style={{
+                        fontFamily: fonts.secondary[600],
+                        fontSize: windowWidth / 25,
+                        color: colors.primary,
+                    }}>{item.posisi_alias}</Text>
+
+
+                    <Text style={{
                         left: 5,
                         width: 50,
                         textAlign: 'center',

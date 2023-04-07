@@ -218,7 +218,7 @@ export default function TimDetail({ navigation, route }) {
                                     color: colors.white,
                                     fontSize: 14,
                                     textAlign: 'center',
-                                }}>{item.posisi}</Text>
+                                }}>{item.posisi_alias}</Text>
                             </View>
                             <View style={{
                                 flex: 0.5,
