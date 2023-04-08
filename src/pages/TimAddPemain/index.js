@@ -12,7 +12,7 @@ export default function TimAddPemain({ navigation, route }) {
         fid_tim: route.params.fid_tim,
         nama_pemain: '',
         nomor: '',
-        posisi: '',
+        posisi: 'OH',
     });
 
     const _sendServer = async () => {

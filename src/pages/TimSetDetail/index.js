@@ -68,13 +68,14 @@ export default function TimSetDetail({ navigation, route }) {
                     flexDirection: 'row'
                 }}>
                     <Text style={{
+                        flex: 0.5,
                         fontFamily: fonts.secondary[600],
                         fontSize: windowWidth / 25,
                         color: colors.primary,
                     }}>{item.posisi}. </Text>
 
                     <Text style={{
-                        // flex: 1,
+                        flex: 1,
                         width: windowWidth / 2,
                         fontFamily: fonts.secondary[600],
                         fontSize: windowWidth / 25,
@@ -82,21 +83,27 @@ export default function TimSetDetail({ navigation, route }) {
                     }}>{item.nama_pemain}
                     </Text>
                     <Text style={{
+                        flex: 0.5,
                         fontFamily: fonts.secondary[600],
                         fontSize: windowWidth / 25,
                         color: colors.primary,
                     }}>{item.posisi_alias}</Text>
 
-
-                    <Text style={{
-                        left: 5,
-                        width: 50,
-                        textAlign: 'center',
-                        fontFamily: fonts.secondary[600],
-                        fontSize: windowWidth / 25,
+                    <View style={{
+                        flex: 0.3,
                         backgroundColor: colors.black,
-                        color: colors.white,
-                    }}>{item.nomor} </Text>
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginHorizontal: 10
+                    }}>
+
+                        <Text style={{
+                            textAlign: 'center',
+                            fontFamily: fonts.secondary[600],
+                            fontSize: windowWidth / 25,
+                            color: colors.white,
+                        }}>{item.nomor} </Text>
+                    </View>
 
                 </View>
 
